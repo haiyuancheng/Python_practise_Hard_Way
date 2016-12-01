@@ -2,36 +2,46 @@
 #-*- coding: UTF-8 -*-
 #functions and files
 
-from sys import argv
+from sys import argv #导入模块sys中的argv这个模块
 
-script, input_file = argv
+script, input_file = argv # 脚本名，输入文件为输入参数
 
-def print_all(f):
-    print f.read()
+def print_all(f): #定义函数
+    print f.read() #打印函数的主体内容
 
-def rewind(f):
-    f.seek(0)
+def rewind(f): #定义函数
+    f.seek(0) #函数体,从文件起始位置读起
 
-def print_a_line(line_count, f):
-    print line_count, f.readline()
+def print_a_line(line_count, f): #定义函数
+    print line_count, f.readline() #打印函数体
 
-current_file = open(input_file)
+current_file = open(input_file)  #打开文件
 
-print "First let's print the whole file:\n"
+print "First let's print the whole file:\n" #打印字符串
 
-print_all(current_file)
+print_all(current_file) #调用函数
 
-print "Now let's rewind, kind of like a tape. "
+print "Now let's rewind, kind of like a tape. " #打印字符串
 
-rewind(current_file)
+rewind(current_file) #调用函数
 
-print "Let's print three lines."
+print "Let's print three lines." #打印字符串
 
-current_line = 1
-print_a_line(current_line, current_file)
+current_line = 1 #定义变量
+print_a_line(current_line, current_file) #滴啊用该函数
 
-current_line = current_line + 1
-print_a_line(current_line, current_file)
+current_line = current_line + 1 #定义变量
+print_a_line(current_line, current_file) #调用函数
 
-current_line = current_line + 1
-print_a_line(current_line, current_file)
+current_line = current_line + 1 #定义变量
+print_a_line(current_line, current_file) #调用函数
+
+"""
+seek() 方法语法如下：
+fileObject.seek(offset[, whence])
+参数
+offset -- 开始的偏移量，也就是代表需要移动偏移的字节数
+whence：可选，默认值为 0。给offset参数一个定义，表示要从哪个位置开始偏移；0代表从文件开头开始算起，1代表从当前位置开始算起，2代表从文件末尾算起。
+返回值
+该函数没有返回值。
+"""
