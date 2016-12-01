@@ -1,0 +1,54 @@
+#how to use python pragramme, remote to control computer close or open automation
+#Preparation
+
+import poplib, email
+from email.header import decode_header
+import smtplib
+import time
+import os, sys
+import random
+
+
+def accp_mail():
+    try:
+        p = poplib.POP3('pop.qq.com')
+        p.user('1007701905@qq.com')
+        p.pass_('C*#@721670789%hy')
+        ret = p.stat()
+    except poplib.error_proto, e:
+        return 1
+        print "Login failed:", e
+        sys.exit(1)
+
+    for item in p.list()[1]:
+        number, octets = item.split(' ')
+        print "Message %s: %sbytes"%(number,octets)
+        lines = p.retr(number)[1]
+        msg = email.message_from_string("\n".join(lines))
+        print msg.as_string()
+        print msg.get_payload()
+        if msg.get_payload() == "start\n\n":
+            return 0
+
+def send_mail():
+    try:
+        handle = smtplib.SMTP()
+        handle.connect('pop.sina.com',25)
+        handle.login('haiyuacheng@sina.com', '*#@Hyc@sina.com')
+        msg = "To: 1007701905@qq.com\r\nFrom: haiyuacheng@sina.com\r\nSubject: startpc \r\n\r\nstart\r\n"
+        handle.sendmail('haiyuacheng@sina.com', '1007701905@qq.com', msg)
+        handle.close()
+        return 1
+    except:
+        return 0
+if __name__ == '__main__':
+    while send_mail() == 0:
+        print "send email success"
+        time.sleep(2)
+        break
+    while True:
+        time.sleep(5)
+        if accp_mail() == 0:
+            os.system('shutdown -f -s -t 10 -c closing...')
+            print "success"
+            break

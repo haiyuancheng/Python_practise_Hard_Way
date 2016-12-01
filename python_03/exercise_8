@@ -1,0 +1,21 @@
+#!/usr/bin/python
+#-*- coding: utf-8 -*-
+#printing printing and printing
+
+#Here's some new strange stuff, remember type it exactly
+
+days = "Mon Tue Wed Thu Fri Sta Sun" #define string variable
+
+#months = "Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug" #define months with \n
+months = "Jan\tFeb\tMar\tApr\tMay\tJun\tJul\tAug" #define months with \t
+
+
+print "Here are the days: ",    days  #print days info
+print "Here are the months: ",  months #print months info
+#print "Here are the months: "  months #error print without comma,suntax error
+print """
+There's something goning on here.
+with the three dobule-quotes.
+we'll be able to type as much as we like.
+Even 4 lines if we want, or 5, or 6
+"""  #print comment info

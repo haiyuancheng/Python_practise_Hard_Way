@@ -1,0 +1,23 @@
+
+print "Hello World "
+print "Hello Again"
+print "I like typing this"
+print "This is fun"
+#print "This is fun"  ##comment out one line###
+print 'Yay! Printing'
+print "I'd much rather you 'not'."
+print 'I "said" do not touch this.'
+
+
+print  "My name is jason, i am  learning Python process" ##use ''' '''  comment out Multi-line and print my content##
+
+list = ["Hello World","Hello Again","I like typing this", "This is fun",'Yay! Printing',"I'd much rather you 'not'.",'I "said" do not touch this.'] #python list#
+print list[6]
+print (list[0])
+print list [0:6]
+
+print "Hello World "+"Hello Again" + "I like typing this" + "This is fun" + 'Yay! Printing' +  'Yay! Printing'  + "I'd much rather you 'not'." + 'I "said" do not touch this.'
+
+#print list[#]
+for item in list:
+    print item

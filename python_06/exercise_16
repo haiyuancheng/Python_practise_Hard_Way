@@ -1,0 +1,45 @@
+#！/usr/bin/python
+#-*- coding: UTF-8 -*-
+#More files
+
+from  sys improt argv
+
+from os.path import exists
+
+script, from_file, to_file = argv
+
+print "Copying from %s to %s" % (from_file, to_file)
+
+#we could do these two on one line, how?
+
+in_file = open(from_file)
+indata = in_file.read()
+
+print "The input file is %d bytes long" % len(indata)
+
+print "Does the ouput file exit?" "%r" % exists(to_file)
+print "Ready, hit Return to continue, CTRL-c to abort."
+raw_input()
+
+out_file = open(to_file,'w')
+out_file.write(indata)
+
+print "Alright, all done."
+
+out_file.close()
+in_file.close()
+
+
+#代码改写
+#！/usr/bin/python
+#-*- coding: UTF-8 -*-
+#More files
+from  sys import argv
+from os.path import exists
+script, from_file, to_file = argv
+print "Copying from %s to %s" % (from_file, to_file)
+in_file = open(from_file).read() #这种模式的话结尾不需要close文件，如果close文件会报错。
+print "Ready, hit Return to continue, CTRL-c to abort."
+raw_input()
+out_file = open(to_file,'w').write(in_file)
+print "Alright, all done."

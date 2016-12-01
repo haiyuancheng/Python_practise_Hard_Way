@@ -1,0 +1,102 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+#Parameters, Unpacking, Variables
+
+# from sys import argv
+#
+# script, first, second,third = argv
+#
+# print "The script is called:", script
+#
+# print "Your first variable is:", first
+#
+# print "Your second variable is:", second
+#
+# print "Your third variable is:", third
+
+
+#excute in Linux plaform
+"""
+[jason@shadowsocks tools]$ ./ex13.py  first second third
+The script is called: ./ex13.py
+Your first variable is: first
+Your second variable is: second
+Your third variable is: third
+[jason@shadowsocks tools]$ ./ex13.py  jason tom jim
+The script is called: ./ex13.py
+Your first variable is: jason
+Your second variable is: tom
+Your third variable is: jim
+[jason@shadowsocks tools]$ ./ex13.py stuff things that
+The script is called: ./ex13.py
+Your first variable is: stuff
+Your second variable is: things
+Your third variable is: that
+[jason@shadowsocks tools]$ ./ex13.py apple orange grapefruit
+The script is called: ./ex13.py
+Your first variable is: apple
+Your second variable is: orange
+Your third variable is: grapefruit
+"""
+#
+# [jason@shadowsocks tools]$ ./ex13.py  it teacher
+# Traceback (most recent call last):
+#   File "./ex13.py", line 6, in <module>
+#     script, first, second,third = argv
+# ValueError: need more than 3 values to unpack ##报错提示必须得三个参数 才能执行
+
+
+from sys import argv
+
+script = raw_input("Please input your parameter: ")
+first = raw_input("Please input your parameter: ")
+second =  raw_input("Please input your parameter: ")
+third =  raw_input("Please input your parameter: ")
+#script, first, second,third = argv
+
+print "The script is called:", script
+print "Your first variable is:", first
+print "Your second variable is:", second
+print "Your third variable is:", third
+
+
+'''
+The differenct has to do with where the user is required
+to give input, if they give your script inputs on the commond
+line,then you use agv.if you want them to input using the
+keyboard while the script is running, then use raw_input().
+'''
+
+
+
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+
+from sys import argv
+
+script, first, second,third = argv
+
+print "The script is called:", script
+print "Your first variable is:", first
+print "Your second variable is:", second
+print "Your third variable is:", third
+
+script_01 = raw_input("Please input you first parameter: ")
+first_01 = raw_input("Please input your second parameter: ")
+
+print "The first parameter is: ", script_01
+print "The second parameter is: ", first_01
+
+[jason@shadowsocks tools]$ ./ex13.py  it teacher farmer
+The script is called: ./ex13.py
+Your first variable is: it
+Your second variable is: teacher
+Your third variable is: farmer
+Please input you first parameter: 1
+Please input your second parameter: 2
+The first parameter is:  1
+The second parameter is:  2
+'''
+Just slap two lines at the end of the script that use
+raw_input() to get something and then print it
+'''

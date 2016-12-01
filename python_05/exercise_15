@@ -1,0 +1,87 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+from sys import argv
+
+script, filename = argv
+
+print "We're going to erase %r." % filename
+print "If you don't want that, hit CTRL-C(^c)."
+print "If you do want that, hit Return."
+
+raw_input("?")
+
+print "Opening the file..."
+target = open(filename, 'w')
+
+print "Truncating the file. Goodbye!"
+target.truncate()
+
+print "Now I'm going to ask you for three lines."
+
+line1 = raw_input("line 1: ")
+line2 = raw_input("line 2: ")
+line3 = raw_input("line 3: ")
+line4 = raw_input("line 4: ")
+
+print "I'm going to write these to the file."
+
+target.write(line1)
+target.write("\n")
+target.write(line2)
+target.write("\n")
+target.write(line3)
+target.write("\n")
+
+print "And finally, we close it."
+target.close()
+
+
+#文件被打开，在写入东西的同时是不能继续读的，必须先close再打开。
+
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+from sys import argv
+
+script, filename = argv
+
+print "We're going to erase %r." % filename
+print "If you don't want that, hit CTRL-C(^c)."
+print "If you do want that, hit Return."
+
+raw_input("?")
+
+print "Opening the file..."
+target = open(filename, 'w+')
+
+print "Truncating the file. Goodbye!"
+target.truncate() #如果以w or w+模式打开文件，target.truncate()可以省略
+
+print "Now I'm going to ask you for three lines."
+
+line1 = raw_input("line 1: ")
+line2 = raw_input("line 2: ")
+line3 = raw_input("line 3: ")
+
+print "I'm going to write these to the file.\n"
+target.write(line1 + "\n" + line2 + "\n" + line3 +"\n")
+target.close()
+fo = open(filename)
+print fo.read()
+
+"""
+[jason@shadowsocks exercise]$ ./ex16.py  test.txt
+We're going to erase 'test.txt'.
+If you don't want that, hit CTRL-C(^c).
+If you do want that, hit Return.
+?
+Opening the file...
+Truncating the file. Goodbye!
+Now I'm going to ask you for three lines.
+line 1: Lucy has a little sister
+line 2: Jason lives in Wuhan
+line 3: Hot
+I'm going to write these to the file.
+Lucy has a little sister
+Jason lives in Wuhan
+Hot
+"""

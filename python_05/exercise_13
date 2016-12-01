@@ -1,0 +1,121 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+#Prompting and Passing
+
+from sys import argv
+
+script, user_name = argv
+promt = '>'
+
+print "Hi %s, I'm the %s script." % (user_name, script)
+print "I'd like to ask you a few questions."
+print "Do you like me %s" % user_name
+likes = raw_input(promt)
+
+print "Where do you live %s?" % user_name
+lives = raw_input(promt)
+
+print "What kind of computer do you have?"
+computer = raw_input(promt)
+
+print """
+Alright, so you said %r  about like me.
+You live in %r. Not sure where that is.
+And you have a %t computer. Nice
+""" % (likes, lives, computer)
+
+'''
+excute On Linux Platform
+[jason@shadowsocks tools]$ vim ex14.py
+from sys import argv
+
+script, user_name = argv
+#promt = '>'
+promt = '#'
+
+print "Hi %s, I'm the %s script." % (user_name, script)
+print "I'd like to ask you a few questions."
+print "Do you like me %s" % user_name
+likes = raw_input(promt)
+
+print "Where do you live %s?" % user_name
+lives = raw_input(promt)
+
+print "What kind of computer do you have?"
+computer = raw_input(promt)
+
+print """
+Alright, so you said %r about like me.
+You live in %r. Not sure where that is.
+And you have a %r computer. Nice
+"""% (likes, lives, computer)
+
+"ex14.py" 28L, 597C written
+[jason@shadowsocks tools]$ ./ex14.py Jason
+Hi Jason, I'm the ./ex14.py script.
+I'd like to ask you a few questions.
+Do you like me Jason
+#Yes
+Where do you live Jason?
+#Wuhan
+What kind of computer do you have?
+#ThinkPad
+Alright, so you said 'Yes' about like me.
+You live in 'Wuhan'. Not sure where that is.
+And you have a 'ThinkPad' computer. Nice
+'''
+
+
+# extend the program
+# [jason@shadowsocks tools]$ cat ex14.py
+# #!/usr/bin/python
+# #-*- coding: UTF-8 -*-
+# #Prompting and Passing
+#
+# from sys import argv
+#
+# script, user_name, gender, job = argv
+# #promt = '>'
+# promt = '#'
+#
+# print "Hi %s, I'm the %s script, My gender is %s and My job is %s " % (user_name, script, gender, job)
+# print "I'd like to ask you a few questions."
+# print "Do you like me %s" % user_name
+# likes = raw_input(promt)
+#
+# print "Where do you live %s?" % user_name
+# lives = raw_input(promt)
+#
+# print "What kind of computer do you have?"
+# computer = raw_input(promt)
+#
+# print "How old are you?"
+# age = raw_input(promt)
+#
+# print "What kind of girl do you like?"
+# form = raw_input(promt)
+#
+# print """
+# Alright, so you said %r about like me.
+# You live in %r. Not sure where that is.
+# And you have a %r computer. Nice,I heard
+# your are %r, like %r girl, right?
+# """ % (likes, lives, computer, age, form)
+# jason@shadowsocks tools]$ ./ex14.py Jason Male IT
+# Hi Jason, I'm the ./ex14.py script, My gender is Male and My job is IT
+# I'd like to ask you a few questions.
+# Do you like me Jason
+# #Yes
+# Where do you live Jason?
+# #Wuhan
+# What kind of computer do you have?
+# #Thinkpad e40
+# How old are you?
+# #29
+# What kind of girl do you like?
+# #Thinner
+#
+# Alright, so you said 'Yes' about like me.
+# You live in 'Wuhan'. Not sure where that is.
+# And you have a 'Thinkpad e40' computer. Nice,I heard
+# your are '29', like 'Thinner' girl, right?

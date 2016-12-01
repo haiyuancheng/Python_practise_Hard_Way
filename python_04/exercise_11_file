@@ -1,0 +1,224 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+#open a file
+
+
+"""practise some file method"""
+
+#Use file built-in fuction open
+#use help(open)
+#http://www.runoob.com/python/python-files-io.html
+# open(...)
+
+"""
+file object = open(name[, mode[, buffering]])
+file_name:file_name变量是一个包含了你要访问的文件名称的字符串值
+access_mode:access_mode决定了打开文件的模式:只读，写入，追加等。
+所有可取值见如下的完全列表。这个参数是非强制的，默认文件访问模式为只读(r).
+buffering:如果buffering的值被设为0，就不会有寄存。如果buffering的
+值取1，访问文件时会寄存行。如果将buffering的值设为大于1的整数，表明了
+这就是的寄存区的缓冲大小。如果取负值，寄存区的缓冲大小则为系统默认
+"""
+# r:以只读方式打开文件。文件指针将会放在文件开头，这是默认模式。
+# rb:以二进制格式打开一个文件用于只读。文件指针将会放在文件开头。这是默认模式。
+# r+:打开一个文件用于读写。文件指针将会放在文件开头。
+# rb+:以二进制格式打开一个文件用于读写。文件指针将会放在文件的开头。
+# w:打开一个文件用于写入。如果该文件已经存在将其覆盖。如果该文件不存在，创建新文件。
+# wb:以二进制格式打开一个文件只用于写入。如果该文件存在将其覆盖。如果文件不存在，创建新文件。
+# w+:打开一个文件用于读写。如果文件存在，将其覆盖。不存在则创建。
+# wb+:以二进制格式打开一个文件用于读写，如果该文件存在将其覆盖，不存在则创建。
+# a:打开一个文件用于追加。如果该文件存在，文件指针会放在其末尾。也就是说，新的内容会被写入到
+# 已有内容之后。如果该文件不存在，创建文件进行写入。
+# ab:以二进制格式打开一个文件用于追加。如果文件存在，文件指针将会放在文件的结尾。也就是说，新
+# 的内容会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。
+# a+:打开一个文件用于读写。如果该文件存在，文件指针将会放在文件的结尾。文件打开时是追加模式。
+# 如果文件不存在，创建文件用于读写。
+# ab+:以二进制格式打开一个文件用于追加。如果文件存在，文件指针将会放在文件末尾。如果问价不存在
+# ，创建新文件用于读写。
+# file对象的属性
+# 文件被打开后。你有一个file对象，你可以得到有关该文件的各种信息。以下
+# 是和file对象香相关的所有属性的列表
+
+"""
+file.closed:return true if file was closed,or return false
+file.mode:return the opened-file  access type.
+file.name:return the file
+file.softspace:if output by print, must follow space character,return false,
+return true.
+"""
+
+fo = open("foo.txt", "wb")
+print "文件名: ", fo.name
+print "文件是否已关闭: ", fo.closed
+print "访问模式: ", fo.mode
+print "末尾是否强制加空格: ", fo.softspace
+
+"""
+close() Method
+File 对象的close()方法刷新缓冲区里任何还没写入的信息，并关闭该文件，这之后便不能再进行写入。
+当一个文件对象的引用被重新指定给另外一个文件时, Python 会关闭之前的文件。用close()方法关闭
+文件是一个好习惯。
+语法：
+   fileObject.close():
+"""
+#打开一个文件
+fo_01 = open("foo.txt", "wb")
+print "文件名: ", fo_01.name
+#关闭一个文件
+fo_01.close()
+
+"""
+write()
+write()方法可将任何字符串写入一个打开的文件。需要重要注意的是, Python字符串可以是二进制
+数据，而不仅仅是文字。write()方法不会再字符串纪委添加换行符('\n')
+fileObject.write(string);
+"""
+#打开一个文件
+fo_02 = open("foo.txt", "wb")
+fo_02.write("www.runoob.com!\nVery good site!\n");
+#关闭一个文件
+fo_02.close()
+
+
+"""
+read()方法
+read()方法从一个打开的文件中读取一个字符串。需要重点注意的是，Python字符串可以是二进制
+数据，而不仅仅是文字
+语法：
+fileObject.read([count]);
+在这里，被传递的参数主要是从已打开的文件中读取字节数。该方法从文件的开头读入，如果没传入
+count,它会尝试尽可能多地读取更多的内容，很可能是直到文件的结尾
+"""
+#打开一个文件
+fo_03 = open("foo.txt", "r+")
+str = fo_03.read(10)
+print "读取的字符串是: ", str
+#关闭打开的文件
+
+"""
+文件定位
+tell()方法告诉你文件当前的位置;换句话说，下一次的读写会发生在文件开头
+这么多字节后，seek(offset[,from])方法改变当前文件的位置。Offset变量
+表示要移动的字节数。From变量指定开始移动的字节的参考位置。如果from被设
+为0，这意味着将文件的开头作为移动字节的参考位置，如果设定为1，则使用当前
+的位置作为参考位置。如果它被设定为2，那么该文件的末尾将作为参考位置
+"""
+
+'''
+Note On Windows, tell() can return illegal values (after an fgets())
+when reading files with Unix-style line-endings. Use binary mode ('rb') to circumvent this problem
+'''
+#打开一个文件
+fo_04 = open("foo.txt", "rb")
+#fo_04 = open("foo.txt", "r+")#少两个字符
+str = fo_04.read(10)
+print "读取的字符串是: ", str
+
+#查找当前位置
+postion = fo_04.tell()
+print "当前文件位置: ", postion
+
+postion = fo_04.seek(0,0)
+str = fo_04.read(10)
+print "重读字符串: ", str
+#关闭打开的文件
+fo_04.close()
+
+
+"""
+Python的os模块提供了帮你执行文件操作的方法，比喻重命名和删除文件。
+要使用这个模块，你必须先导入它，然后才可以调用相关的各种功能。
+rename()方法：
+两个参数: 当前文件名和新文件名
+> help(os.rename)
+Help on built-in function rename in module nt:
+rename(...)
+    rename(old, new)
+    Rename a file or directory.
+"""
+import os
+#重命名test.txt 到test_01.txt
+os.rename("test.txt", "test_01.txt")
+
+"""
+remove()方法删除文件
+>>> help(os.remove)
+Help on built-in function remove in module nt:
+remove(...)
+    remove(path)
+    Remove a file (same as unlink(path)).
+"""
+import os
+#删除一个已经存在的文件test_01.txt
+os.remove("test_01.txt")
+
+"""
+Python 里的目录，所有的文件都包含在各个不同的目录里，
+不过Python也能轻松处理。os模块有许多方法帮你创建、
+删除和更改目录
+mkdir()方法
+>>> help(os.mkdir)
+Help on built-in function mkdir in module nt:
+mkdir(...)
+    mkdir(path [, mode=0777])
+    Create a directory.
+"""
+>> import os
+>>> os.mkdir("test")
+
+"""
+help(os.chdir)
+Help on built-in function chdir in module nt:
+chdir(...)
+    chdir(path)
+    Change the current working directory to the specified path.
+"""
+"""
+help(os.rmdir)
+Help on built-in function rmdir in module nt:
+rmdir(...)
+    rmdir(path)
+    Remove a directory
+"""
+
+os.getcwd()
+'/home/jason/tools'
+os.chdir("/home/jason")
+os.getcwd()
+'/home/jason'
+os.chdir("/home/jason/tools")
+os.getcwd()
+'/home/jason/tools'
+os.chdir("/home/jason/tools/test")
+os.getcwd()
+'/home/jason/tools/test'
+os.rmdir("/home/jason/tools/test")
+os.chdir("/home/jason/tools")
+os.getcwd()
+'/home/jason/tools'
+
+#file method http://www.runoob.com/python/file-methods.html
+
+#directory method with os module  http://www.runoob.com/python/os-file-methods.html
+
+# Open a file
+fo = open("foo.txt", "rb+")
+print "Name of the file: ", fo.name
+
+# Assuming file has following 5 lines
+# This is 1st line
+# This is 2nd line
+# This is 3rd line
+# This is 4th line
+# This is 5th line
+
+line = fo.readline()
+print "Read Line: %s" % (line)
+
+# Get the current position of the file.
+pos = fo.tell()
+print "Current Position: %d" % (pos)
+
+# Close opend file
+fo.close()
+

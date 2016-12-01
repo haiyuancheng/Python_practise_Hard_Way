@@ -1,0 +1,68 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+#Ask Questions
+
+# Most of what software does is the following:
+# 1 Take some kind of input from a person.
+# 2 Change it.
+# 3 Print out something to show how it changed.
+#
+print "How old are you?",
+age = raw_input()
+print "How tall are you?",
+height = raw_input()
+print "How much do you weigh?",
+weight = raw_input()
+
+print "So, you'r %r old, %r tall and %r heavy." % (
+age, height, weight)
+
+# How old are you? 29
+# How tall are you? 6'2"
+# How much do you weigh? 180lbs
+# So, you'r '29' old, '6\'2"' tall and '180lbs' heavy.
+
+#Python provide two Built-in functions
+# raw_input() and input()
+# raw_input([prompt]) 函数从标准输入读入一行，并返回一个字符串（去掉结尾的换行符）：
+
+str = raw_input("请输入: ")
+print "你输入的内容是: ", str
+#input([prompt]) 函数基本类似，但是input可以接收一个Python表达式输入，并将运算结果返回
+str_01 = input("请输入: ");
+print "你输入的内容是: ", str_01
+
+str_02 = int(raw_input("请输入: "))
+print "你输入的内容是: ",str_02
+# for i in range(start=, stop=, step=)
+# 请输入: jason
+# 你输入的内容是:  jason
+# 请输入: [x**2 for x in range(2,10,2)]
+# 你输入的内容是:  [4, 16, 36, 64]
+#
+# 请输入: jason
+# 你输入的内容是:  jason
+# 请输入: jason
+# Traceback (most recent call last):
+#   File "C:/Users/chehaiyu/PycharmProjects/python_03/exercise_10", line 33, in <module>
+#     str_01 = input("请输入: ");
+#   File "<string>", line 1, in <module>
+# NameError: name 'jason' is not defined
+
+# 请输入: jason
+# 你输入的内容是:  jason
+# 请输入: "jason"
+# 你输入的内容是:  jason
+'''
+I'd like to add a little more detail to the explanation provided by everyone for the' \
+ ' python 2 users. raw_input(), which, by now, you know that evaluates what ever data ' \
+ 'the user enters as a string. This means that python doesnt try to even understand the ' \
+ 'entered data again. All it will consider is that the entered data will be string,' \
+ ' whether or not it is an actual string or int or anything.
+While input() on the other hand tries to understand the data entered by the user. So
+the input like helloworld would even show the error as 'helloworld is undefined'. In
+conclusion, for python 2, to enter a string too you need to enter it like 'helloworld'
+which is the common structure used in python to use strings.
+In the example above, Python 2.x is trying to evaluate jason as a variable rather than a string.
+ To avoid that, we can use double quotes around our input like "jason":
+'''

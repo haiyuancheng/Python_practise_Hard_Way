@@ -1,0 +1,47 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+#Names, Varables, Code, Functions
+
+# this one is like your scripts with your argv
+def print_two(*args):
+    arg1, arg2 = args
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+
+# ok, that *args is actually pointless, we can just do this
+def print_two_again(arg1,arg2):
+    print "arg1: %r, arg2: %r" % (arg1, arg2)
+
+# this just take one argument
+def print_one(arg1):
+    print "arg1: %r" % arg1
+
+# this one takes no arguments
+def print_none():
+    print "I got nothin'."
+
+print_two("Zed", "Shaw")
+print_two_again("Zed", "Show")
+print_one("First!")
+print_none()
+
+
+#Important Read#
+'''
+1.函数是以def开始的，
+2.函数名称只能是以字符和下划线组成的，
+3.函数名称是紧跟着括号
+4.括号里面可以包含参数，多个参数以逗号隔开，
+5.不能使用重复的函数名称，
+6.紧跟着参数的是括号和冒号,
+7.紧跟着函数定义的代码是使用了4个空格字符或者tab键，
+8.函数结束的时候取消缩进。
+
+当你运行(use or call ) one function，记得检查下面的点：
+1.调用函数时是否使用了函数的名称？
+2.函数的名称是否紧跟着(?
+3.括号后有无参数? 多个参数是否以逗号隔开？
+4.函数是否以）结尾？
+
+at last
+'运行函数(run)'、'调用函数(call)'、'使用函数(use)' 是同一个意思
+'''

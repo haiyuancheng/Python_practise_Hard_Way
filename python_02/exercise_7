@@ -1,0 +1,32 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+
+formatter = "%r %r %r %r" #define variable formatter
+
+print formatter % (1, 2, 3, 4) #date type
+print formatter % ("one", "two", "three", "four") #string type
+print formatter % (True, False, False, True) #bool date type
+print formatter % (formatter, formatter, formatter, formatter) #variable type
+print formatter % ("I had this thing",
+                   "That you could type up right",
+                   "But it did not sing",
+                   "So I said goodnight") #print double-quotes strings
+
+print formatter %  ('I had this thing',
+                    'That you could type up right',
+                    'But it did not sing',
+                    'So I said goodnight') #print single-quote string
+'''
+Do your checks, write down your mistakes, and try not to make the same mistakes on the next exercise.
+Notice that the last line of output uses both single-quotes and double-quotes for individual pieces.
+Why do you think that is?
+'''
+
+#see difference betwween %s and %r"
+import datetime
+
+x =  datetime.date.today()
+
+print x
+print "Today date is %s..." % x
+print "Today date is %r..." % x

@@ -1,0 +1,25 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+#Functions and Variables
+
+def cheese_and_crackers(cheese_count, boxes_of_crackers): #定义函数(method)
+    print "You have %d cheese!" % cheese_count #打印字符串，格式化字符串
+    print "You have %d boxes or of crackers!" % boxes_of_crackers #打印字符串，格式化字符串
+    print "Man that's enough for a party!" #打印字符串
+    print "Get a blanket.\n" #打印字符串并换行
+
+print "We can just gie the function numbers directly:"
+cheese_and_crackers(20, 30) #调用函数，参数为常量。
+
+print "OR, we can use variables from our script:" #打印字符串
+amount_of_cheese = 10
+amount_of_crackers = 50 #定义变量
+
+cheese_and_crackers(amount_of_cheese, amount_of_crackers) #调用函数，参数为两个变量
+
+print "We can even do math and inside too:"
+cheese_and_crackers(10 + 20, 5 +6) #调用函数，参数是常量运算的结果。
+
+print "And we can combine the two, variables and math:" #打印字符串
+cheese_and_crackers(amount_of_cheese + 100, amount_of_crackers + 100) #调用函数cheese_and_crackers, 参数有变量和数字常量组成
+

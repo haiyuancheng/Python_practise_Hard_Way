@@ -1,0 +1,31 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+#practise string and text
+x = "There are %d types of people." % 10 #define a vraiable x, put a digital type vriable
+binary = "binary" # define a string variable
+do_not =  "don't" # define a string varaible with a single quote inside
+y = "Those who know %s and those who %s." % (binary, do_not) #define string varialbe with two inside strings
+
+print x #print x
+print y #print y
+
+print "I said: %r." % x # print string with one varible %r
+print "I also said: '%s'." % y # print strings with one inside string
+
+hilarious = False #define hilarious
+joke_evaluation = "Isn't that joke so funny?! %r" #define joke_evaluation
+
+print joke_evaluation % hilarious # print strings info
+
+w = "This is the left side of ..." #define strings x
+e = "a string with a right side."  #define strings e
+
+print w + e #print strings stitching
+
+'''
+Study Drills
+Go through this program and write a comment above each line explaining it.
+Find all the palces where a string is put inside a string, there are four places.
+Are you sure ther only four places? How do you know? Maybe I like lying
+Explain why adding two strings w with e makes a longer string
+'''

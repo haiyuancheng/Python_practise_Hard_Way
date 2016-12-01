@@ -1,0 +1,51 @@
+#!/usr/bin/python
+#-*- coding:  UTF-8 -*-
+#调用函数的10种方法
+
+def count(x,y):
+    a = x + y
+    return a
+
+#第一种方法
+print count(1,2)
+
+#二
+x = 2
+y = 3
+print count(x, y)
+
+#三
+print count(x + 2, y +3 )
+
+#四
+print count( 2 + 2, 4+9 )
+
+#五 通过手动输入，注意raw_input手动输入的是字符串，int转化成整形数字方可行
+x = int(raw_input("Please input your first argv x: \n"))
+y = int(raw_input("Please input your second argv y: \n"))
+print x, y
+print count(x, y)
+
+#六 直接通过input 用户手动输入
+x = input("Please input your first argv x: \n")
+y = input("Please input your second argv y: \n")
+print x, y
+print count(x, y)
+
+
+#七 通过参数
+def count(*args):
+    x, y = args
+    a = x + y
+    print " x: %r, y: %r" % (x, y)
+    return a
+
+
+print count(1, 2)
+
+#八 定义一个列表
+list = [3, 6]
+print count(list[0], list[1])
+
+
+
