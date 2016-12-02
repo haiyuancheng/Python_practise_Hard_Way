@@ -1,4 +1,18 @@
 list[]: 列表 list[0:3] 起始位置是0代表第一个，终止位置是3，不包含第3个
+>> list2 = [1, 2, 3, 4, 5, 6, 7 ];
+>>> print list2[1:]
+[2, 3, 4, 5, 6, 7]
+>>> print list2[:-1]
+[1, 2, 3, 4, 5, 6]
+>>> print list2[-1:]
+[7]
+>>> print list2[-2:]
+[6, 7]
+>>> print list2[-2:]
+[6, 7]
+>>>
+>>> print list2[:-2]
+[1, 2, 3, 4, 5]
 字符串和变量拼接可以用 +
 + : 加
 - : 减
@@ -49,7 +63,111 @@ at last
 '''
 调用函数的十种方法 Python_07 study drills
 
-#阅读代码
-bitbucket.org, github.com, 或者 gitorious.org
+str.split(sep, maxsplit)==>>根据sep来分割字符
+Return a list of the words in the string, using sep as the delimiter（分隔符）string
+For example, ' 1  2   3  '.split() returns ['1', '2', '3'], and '  1  2   3  '.split(None, 1) returns ['1', '2   3  ']
 
+str.strip(self, chars)==>>移除字符串头尾指定的字符
+default是空格,返回移除字符串头尾指定的字符生成的新字符串。
+Return a copy of the string with the leading and trailing characters removed
+>>> 'www.example.com'.strip('.')
+'www.example.com'
+>>> 'www.example.com'.strip()
+'www.example.com'
+>>> 'www.example.com'.strip('cmowww')
+'.example.'
+>>> 'www.example.com'.strip('cmowww.')
+'example'
+>>> 'www.example.com'.strip('cmow.')
+'example'
+>>> 'www.example.com'.strip('cmowz.')
+'example'
+>>> 'www.example.com'.strip('cmowzaaa.')
+'example'
 
+#数据字典 dict
+'''
+Each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is
+enclosed in curly braces. An empty dictionary without any items is written with just two curly braces, like this: {}.
+
+Keys are unique within a dictionary while values may not be. The values of a dictionary can be of any type, but
+the keys must be of an immutable data type such as strings, numbers, or tuples.
+key 唯一不可变，value可以改变
+'''
+>>> dict = {'Name': 'Jason', 'Age': 29, 'Job': 'Engineer'} #定义一个字典
+>>> print "dict['Name']: ", dict['Name'] #打印key为Name的value
+dict['Name']:  Jason
+>>> print "dict['Age']: ", dict['Age'] #打印key为Age的value
+dict['Age']:  29
+>>> dict['Age'] =28; #修改key的值
+>>> dict['Job'] = 'teacher'
+>>> print dict
+{'Age': 28, 'Name': 'Jason', 'Job': 'teacher'}
+
+>>> del dict['Age'] #删除字典的key为Age的值
+>>> print dict
+{'Name': 'Jason', 'Job': 'teacher'}
+>>> dict.clear() #删除字典中所有的元素
+>>> print dict
+{}
+>>> dict = {'Name': 'Jason', 'Age': 29, 'Job': 'Engineer'}
+>>> del dict #删除所有的字典
+>>> print dict
+<type 'dict'>
+print dict.items() #打印所有的字典条目
+[('Age', 29), ('Name', 'Jason'), ('Job', 'Engineer')]
+
+>>> for i in dict.items():
+...      print i
+...
+('Age', 29)
+('Name', 'Jason')
+('Job', 'Engineer')
+
+>>> for key,value in dict.items():
+...      print key, value
+...
+Age 29
+Name Jason
+Job Engineer
+str.join() 字符串的拼接
+>>> ':'.join('Rose')
+'R:o:s:e'
+>>> '-'.join('Rose')
+'R-o-s-e'
+>>> ':-'.join('Rose')
+'R:-o:-s:-e'
+#应用
+>> dict = {'zhangxiaoyu': ['123.com', 'unlock', '2'], 'lockuser': ['123456', 'unlock', '0'], '65brother': ['123456', 'unlock', '0']}
+ for key, val in dict.items():
+...     line = []
+...     line.append(key)
+...     print line
+...
+['zhangxiaoyu']
+['lockuser']
+['65brother']
+
+>>> for key, val in dict.items():
+...     line = [ ]
+...     line.append(key)
+...     line.extend(val)
+...     print line
+...
+['zhangxiaoyu', '123.com', 'unlock', '2']
+['lockuser', '123456', 'unlock', '0']
+['65brother', '123456', 'unlock', '0']
+#比较append 和 extend 在list中的不同
+>>> a = [1, 2, 3, 'python', 'jason'] #定义列表a
+>>> print a
+[1, 2, 3, 'python', 'jason']
+>>> a.append('Bob') #向列表中添加字符串
+>>> print a
+[1, 2, 3, 'python', 'jason', 'Bob']
+>>> c = ['Roger', 'Grace', 8, 9]
+>>> a.append(c) #想列表中添加列表
+>>> print a
+[1, 2, 3, 'python', 'jason', 'Bob', ['Roger', 'Grace', 8, 9]] #打印列表中包含列表
+>>> a.extend(c) #使用方法extend 添加字符串
+>>> print a
+[1, 2, 3, 'python', 'jason', 'Bob', ['Roger', 'Grace', 8, 9], 'Roger', 'Grace', 8, 9] #列表中是元素
