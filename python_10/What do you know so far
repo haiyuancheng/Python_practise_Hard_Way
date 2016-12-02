@@ -1,0 +1,52 @@
+list[]: 列表 list[0:3] 起始位置是0代表第一个，终止位置是3，不包含第3个
+字符串和变量拼接可以用 +
++ : 加
+- : 减
+* : 乘
+/ : 除,1/2,1/4取0，4/4为1
+% : 取余数
+变量的表示法字母和下划线
+定义变量的类型，字符型，数字型，字符串，true or false
+%s, %r, %d 格式化字符串
+导入模块 import or from ** import *
+raw_input() and input()
+file 的操作方法 详见exercise_11_file
+imort os 模块提供了文件的操作方法 创建，移动，删除，重命名
+记得文件打开之后需要file.close(),如果是file.open().read()则不需要
+from sys import argv 参数模块的使用，第一个scriptsname
+from os.path import exists
+>>> os.path.basename('/home/jason/tools')
+'tools'
+>>> os.path.basename("/home/jason/tools")
+'tools'
+>>> os.path.dirname("/home/jason/tools")
+'/home/jason'
+>>> os.path.exists("/home/jason/tools")
+True
+值传递不发生改变，列表，数据字典传值发生改变 fun_01 #需要研究下
+
+函数
+注意*args表示法
+#Important Read#
+'''
+1.函数是以def开始的，
+2.函数名称只能是以字符和下划线组成的，
+3.函数名称是紧跟着括号
+4.括号里面可以包含参数，多个参数以逗号隔开，
+5.不能使用重复的函数名称，
+6.紧跟着参数的是括号和冒号,
+7.紧跟着函数定义的代码是使用了4个空格字符或者tab键，
+8.函数结束的时候取消缩进。
+
+当你运行(use or call ) one function，记得检查下面的点：
+1.调用函数时是否使用了函数的名称？
+2.函数的名称是否紧跟着(?
+3.括号后有无参数? 多个参数是否以逗号隔开？
+4.函数是否以）结尾？
+
+at last
+'运行函数(run)'、'调用函数(call)'、'使用函数(use)' 是同一个意思
+'''
+调用函数的十种方法 Python_07 study drills
+
+
