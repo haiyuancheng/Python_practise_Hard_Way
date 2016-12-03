@@ -1,21 +1,14 @@
 #################################################
-# Created on: 2015年12月31日
-# @author: 张晓宇
-# Email: 61411916@qq.com
-# Blog: http://www.cnblogs.com/zhangxiaxuan/
+# Created on: 2016年12月3日
+# @author: Jason
 #################################################
-
-特殊强调：
-    1、博客园博客主页地址为http://www.cnblogs.com/zhangxiaxuan/
-    2、博客园博客主页地址为http://www.cnblogs.com/zhangxiaxuan/
-    3、博客园博客主页地址为http://www.cnblogs.com/zhangxiaxuan/
-    4、重要的是事情说三遍！！！
-
 
 作业一：登陆验证
     1、输入用户名密码
     2、认证成功系那是欢迎信息
     3、输错三次后锁定
+    4、如果用户账户没被锁定，但是输入次数已经超过3次了（针对用户信息有误）
+    5、输入密码加密不显示
 
 程序结构：
 程序包含两个文件login.py和account.db。其中login.py文件为主程序，account.db为账户文件，保存用户的用户名密码等信息
@@ -38,7 +31,7 @@
         error_count_max：密码最多可以输错的次数，达到次数目即被锁定，可根据业务需要设定
         app_info：系统信息，可根据实际需要进行配置
 
-运行环境：Python3.0或以上版本并配置好环境变量（linux主机为了和自带的python2.x版本不冲突，需将python3.X的可执行文件重名为python3或创建名为python3的软链接链接到python的可知文件）
+运行环境：Python2.7
 
 执行方法：
     1、Linux：直接执行# python3 login.py或#./login.py（需要给主程序文件添加可执行权限）
@@ -66,7 +59,7 @@
         app_info：系统信息，主要用于显示
         注意：所有菜单的菜单编号不能是b和q
 
-运行环境：Python3.0或以上版本并配置好环境变量（linux主机为了和自带的python2.x版本不冲突，需将python3.X的可执行文件重名为python3或创建名为python3的软链接链接到python的可知文件）
+运行环境：Python2.7
 
 执行方法：
     1、Linux：直接执行# python3 munu_list.py或#./menu_list.py（需要给主程序文件添加可执行权限）

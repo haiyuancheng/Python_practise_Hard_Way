@@ -84,7 +84,10 @@ Return a copy of the string with the leading and trailing characters removed
 'example'
 >>> 'www.example.com'.strip('cmowzaaa.')
 'example'
-
+>>> 'lockuser 123456 unlock 0'.strip()
+'lockuser 123456 unlock 0'
+>>> 'lockuser 123456 unlock 0'.strip().split()
+['lockuser', '123456', 'unlock', '0']
 #数据字典 dict
 '''
 Each key is separated from its value by a colon (:), the items are separated by commas, and the whole thing is
